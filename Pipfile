@@ -12,6 +12,7 @@ pytest-cov = "==2.6.0"
 codecov = "==1.0.0"
 mypy = "==0.630"
 black = "==18.9b0"
+isort = "==4.3.15"
 
 [requires]
 python_version = "3.7"
@@ -21,3 +22,5 @@ test = "py.test -v --cov=./ --cov-report term-missing -v"
 lint = "mypy ./ --ignore-missing-imports"
 fmt = "black --py36 -v --line-length 80 ."
 fmt-check = "black --py36 -v --line-length 80 --check ."
+isort = "isort --apply --recursive --line-width 80 --use-parentheses --no-inline-sort --multi-line 3 --trailing-comma ."
+isort-check = "isort --check-only --recursive --line-width 80 --use-parentheses --no-inline-sort --multi-line 3 --trailing-comma ."

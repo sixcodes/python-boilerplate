@@ -14,6 +14,7 @@ pytest-cov = "==2.6.0"
 codecov = "==1.0.0"
 mypy = "==0.630"
 black = "==18.9b0"
+isort = "==4.3.15"
 ```
 
 Trás também script já pronto para checagem do código:
@@ -36,3 +37,10 @@ Usamos o `black` para formatar o código na tentativa de terminar com as discuss
 
 `pipenv run fmt` para efetivamente formatar o código. Recomendado rodar a cada save ou antes de comitar.
 `pipenv run fmt-check` para colocar no seu pipeline, pois caso algum código esteja fora do padrão de formatação fará o build falhar.
+
+### isort
+
+Usamos o isort para ordenar os imports do seu código. Os parâmetros do isort geram uma formatação compatível com o black. Dessa forma podemos rodar os dois e eles concordarão em relação à versão final do código formatado.
+
+`pipenv run isort` para ordenar os imports.
+`pipenv run isort-check` para checar se existe algum import fora do lugar, útil para colocar em seu pipeline.
