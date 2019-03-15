@@ -44,3 +44,7 @@ Usamos o isort para ordenar os imports do seu código. Os parâmetros do isort g
 
 `pipenv run isort` para ordenar os imports.
 `pipenv run isort-check` para checar se existe algum import fora do lugar, útil para colocar em seu pipeline.
+
+# CI/CD
+
+Uma configuração do circleci já está pronta em `.circleci/config.yml`. Pode ser usada pra rodar a pipeline de build/check do seu projeto.

@@ -1,0 +1,49 @@
+version: 2.1
+
+commands:
+  fmt-check:
+    description: "Confirma que a formatação do código"
+    steps:
+      - run: "pipenv run fmt-check"
+  lint:
+    description: "Confirma que a tipagem do código está correta"
+    steps:
+      - run: "pipenv run lint"
+  isort-check:
+    description: "Confirma que a ordem dos imports está correta"
+    steps:
+      - run: "pipenv run isort-check"
+  all-tests:
+    description: "Roda todos os testes do projeto (unitários e integração)"
+    steps:
+      - run: "pipenv run test"
+  coverage:
+    description: "Upload coverage data"
+    steps:
+      - run: "pipenv run codecov"
+
+jobs:
+  test:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run:
+          name: Install pip/pipenv
+          command: pip install --user -U pip==18.0 pipenv==2018.7.1
+      - run:
+          name: Install Pipfile.lock
+          command: pipenv install --deploy --ignore-pipfile --dev
+      - run:
+          name: Install project in dev-mode
+          command: pipenv run pip install -e .
+      - fmt-check
+      - isort-check
+      - lint
+      - all-tests
+      - coverage
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
