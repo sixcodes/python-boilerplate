@@ -1,0 +1,42 @@
+# Extensions
+*.pyc
+/.git
+*.swp
+*.swo
+.DS_Store
+*.sqlite3
+.idea
+*.md
+*.log
+
+# files
+README.md
+docker-compose.yml
+
+# folders
+dist/
+build/
+tyrion.egg-info/
+.mypy_cache/
+.pytest_cache
+.circleci/
+.coverage
+
+test
+*.*.*.test*
+.cache
+__pycache__
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
