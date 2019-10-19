@@ -8,18 +8,19 @@ pydantic = "==0.30.1"
 
 [dev-packages]
 asynctest = "==0.12.1"
-pytest = "==4.0.1"
-pytest-cov = "==2.6.0"
+pytest = "==5.2.1"
+pytest-cov = "==2.8.1"
 codecov = "==2.0.15"
 mypy = "==0.630"
 black = "==18.9b0"
 isort = "==4.3.15"
+python-boilerplate = {editable = true,path = "."}
 
 [requires]
 python_version = "3.7"
 
 [scripts]
-test = "py.test -v --cov=./ --cov-report term-missing -v"
+test = "py.test -v --cov=myproj --cov-report term-missing -v"
 lint = "mypy ./ --ignore-missing-imports"
 fmt = "black --py36 -v --line-length 80 ."
 fmt-check = "black --py36 -v --line-length 80 --check ."
