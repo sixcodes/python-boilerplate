@@ -8,7 +8,7 @@ pydantic = "==0.30.1"
 
 [dev-packages]
 asynctest = "==0.12.1"
-pytest = "==4.0.1"
+pytest = "==5.2.1"
 pytest-cov = "==2.6.0"
 codecov = "==2.0.15"
 mypy = "==0.630"
