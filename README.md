@@ -48,3 +48,36 @@ Usamos o isort para ordenar os imports do seu código. Os parâmetros do isort g
 # CI/CD
 
 Uma configuração do circleci já está pronta em `.circleci/config.yml`. Pode ser usada pra rodar a pipeline de build/check do seu projeto.
+
+
+# Pydantic - Configuração baseada em variáveis de ambiente
+
+Para facilitar na criação de um novo serviço e seguindo as boas práticas definidas no [12factors](https://12factor.net/config) sobre configurações.
+Adicionamos o uso no pydantic para criar e validar essas informações para nós.
+
+Exemplo de uso:
+
+```python
+    from config import settings
+    
+    print(settings.DEBUG)
+```
+
+Para configurar uma variável de ambiente é necessário ficar atento ao prefixo.
+o default do projeto verificar inicialmente para uma variável de ambiente chamada `NAMESPACE`caso não a
+encontre o prefixo será `DEV_`, o que isso significa?
+
+O uso ficará da seguinte forma quando configuramos o namespace sempre adicionaremos o prefixo no
+momento de exportar as variaveis de ambiente.
+
+```python
+    NAMESPACE=PROD PROD_DEBUG=False python main.py
+```
+
+Caso não definimos nenhum namespace, o prefixo será `DEV`, ou seja
+
+```python
+    DEV_REDIS_PORT=1234 python main.py
+```
+
+`lembrando que dentro da sua aplicação o que vale é justamente o nome que foi definido no arquivo config.py, sem o prefixo`
