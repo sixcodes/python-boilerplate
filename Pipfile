@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-pydantic = "==0.30.1"
+pydantic = "==1.6.1"
 
 [dev-packages]
 asynctest = "==0.12.1"
