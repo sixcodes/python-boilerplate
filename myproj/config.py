@@ -1,5 +1,4 @@
 import os
-from typing import Optional
 
 from pydantic import BaseSettings
 
@@ -18,9 +17,7 @@ class Settings(BaseSettings):
     DEBUG: bool = True
 
     class Config:
-        env_prefix = (
-            os.getenv("NAMESPACE", "DEV").upper() + "_"
-        )  # defaults to 'APP_'
+        env_prefix = os.getenv("NAMESPACE", "DEV").upper() + "_"
 
 
 settings = Settings()
