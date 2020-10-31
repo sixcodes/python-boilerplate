@@ -79,3 +79,15 @@ Caso não definimos nenhum namespace, o prefixo será `DEV`, ou seja
 ```
 
 Lembrando que dentro da sua aplicação o que vale é justamente o nome que foi definido no arquivo config.py, sem o prefixo.
+
+
+
+# Sphinx Docs
+
+Esse repositório tem o sphinx configurado. Isso premite escrever a documentação do seu projeto e até mesmo usar o Github Pages para hospedá-la.
+
+Antes de começar a usar, ajuste as variáveis no início do arquivo ``docs-src/conf.py``. A documentação, em formato html, é gerada na pasta ``docs/``.
+
+Para gerar a documentação basta rodar: ``pipenv run make-docs``.
+
+Para conseguir gerar a documentação é preciso ter o ``make`` instalado.
