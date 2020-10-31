@@ -47,7 +47,11 @@ Usamos o isort para ordenar os imports do seu código. Os parâmetros do isort g
 
 # CI/CD
 
-Uma configuração do circleci já está pronta em `.circleci/config.yml`. Pode ser usada pra rodar a pipeline de build/check do seu projeto.
+Esse repositorio já possui alguns workflows do Github Actions pré-configurados. Os workflows são:
+
+- `.github/workflows/pull-request.yaml`
+
+    Esse workflow roda em cada PR aberto no projeto. Roda os testes em múltiplas versões do python e faz checagem de formatação de código, lint (com mypy) e formatação de imports (com isort).
 
 
 # Pydantic - Configuração baseada em variáveis de ambiente
@@ -59,7 +63,7 @@ Exemplo de uso:
 
 ```python
     from config import settings
-    
+
     print(settings.DEBUG)
 ```
 
@@ -80,4 +84,4 @@ Caso não definimos nenhum namespace, o prefixo será `DEV`, ou seja
     DEV_REDIS_PORT=1234 python main.py
 ```
 
-`lembrando que dentro da sua aplicação o que vale é justamente o nome que foi definido no arquivo config.py, sem o prefixo`
+Lembrando que dentro da sua aplicação o que vale é justamente o nome que foi definido no arquivo config.py, sem o prefixo.
