@@ -53,6 +53,8 @@ Esse repositorio já possui alguns workflows do Github Actions pré-configurados
 
     Esse workflow roda em cada PR aberto no projeto. Roda os testes em múltiplas versões do python e faz checagem de formatação de código, lint (com mypy) e formatação de imports (com isort).
 
+    Esse workflow faz também upload do relatório de coverage para o [codeclimate](https://codeclimate.com). Perceba que o upload é feito em apenas um versão do python, isso porque o codeclimate rejeita múltiplos upload para um mesmo commit, então precisamos escolher uma das rodadas de teste para fazer o upload.
+
 
 # Pydantic - Configuração baseada em variáveis de ambiente
 
