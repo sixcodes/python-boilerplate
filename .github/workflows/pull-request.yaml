@@ -47,6 +47,9 @@ jobs:
     name: lint
     runs-on: ubuntu-latest
     steps:
+      - name: install {libxml2,libxslt}-dev
+        run: sudo apt-get install libxml2-dev libxslt-dev
+
       - name: checkout
         uses: actions/checkout@v2
 
