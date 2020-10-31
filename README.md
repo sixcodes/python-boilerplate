@@ -17,33 +17,24 @@ black = "==18.9b0"
 isort = "==4.3.15"
 ```
 
-Trás também script já pronto para checagem do código:
+O Pipfile já vem com alguns scripts que ajudam nas tarefas do dia a dia e nas checagens do CI.
 
-### Pytest
+- ``pipenv run test``
 
-Já temos o comando para rodar os testes dos seu código com report de cobertura.
+    Roda os testes do projeto. Esse script está configurado para medir a cobertura do pacote ``myproj``. Esse pacote deve ser ajustado para o pacote onde seu código vai ficar.
 
-`pipenv run test`
+- ``pipenv run lint``
 
-### Mypy
+    Roda o ``mypy`` para fazer checagem estática de tipos no código.
 
-Já temos um script pronto que roda o `mypy`, para fazer análise estátia no seu código. Muito útil para quem já usa type hints.
+- ``pipenv run fmt`` e ``pipenv run fmt-check``
 
-`pipenv run lint`
+    Roda o black para formatar o código. O comando ``pipenv run fmt-check`` apenas checa se alguma formatação seria necessária. É útil para rodar no processo de CI.
 
-### Black
+- ``pipenv run isort`` e ``pipenv run isort-check``
 
-Usamos o `black` para formatar o código na tentativa de terminar com as discussões sobre fomatação. Deixe a formatação para um formatador e concentre-se na lógica do código. =D
+    Formata o código ordenando os imports usando o projeto isort. O comando ``pipenv run isort-check`` apenas checa se algum import precisa ser reformatado. É útil para rodar no processo de CI.
 
-`pipenv run fmt` para efetivamente formatar o código. Recomendado rodar a cada save ou antes de comitar.
-`pipenv run fmt-check` para colocar no seu pipeline, pois caso algum código esteja fora do padrão de formatação fará o build falhar.
-
-### isort
-
-Usamos o isort para ordenar os imports do seu código. Os parâmetros do isort geram uma formatação compatível com o black. Dessa forma podemos rodar os dois e eles concordarão em relação à versão final do código formatado.
-
-`pipenv run isort` para ordenar os imports.
-`pipenv run isort-check` para checar se existe algum import fora do lugar, útil para colocar em seu pipeline.
 
 # CI/CD
 
