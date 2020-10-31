@@ -15,10 +15,10 @@ mypy = "==0.782"
 black = "==18.9b0"
 isort = {extras = ["pipfile"],version = "==4.3.15"}
 python-boilerplate = {editable = true,path = "."}
-lxml = "==4.4.1"
+lxml = "==4.6.1"
 
 [requires]
-python_version = "3.8"
+python_version = "3"
 
 [scripts]
 test = "py.test -v --cov=myproj --cov-report=term-missing --cov-report=xml -v"

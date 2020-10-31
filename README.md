@@ -47,8 +47,15 @@ Usamos o isort para ordenar os imports do seu código. Os parâmetros do isort g
 
 # CI/CD
 
-Uma configuração do circleci já está pronta em `.circleci/config.yml`. Pode ser usada pra rodar a pipeline de build/check do seu projeto.
+Esse repositorio já possui alguns workflows do Github Actions pré-configurados. Os workflows são:
 
+- `.github/workflows/pull-request.yaml`
+
+    Esse workflow roda em cada PR aberto no projeto. Roda os testes em múltiplas versões do python e faz checagem de formatação de código, lint (com mypy) e formatação de imports (com isort).
+
+    Esse workflow faz também upload do relatório de coverage para o [codeclimate](https://codeclimate.com). Perceba que o upload é feito em apenas um versão do python, isso porque o codeclimate rejeita múltiplos upload para um mesmo commit, então precisamos escolher uma das rodadas de teste para fazer o upload.
+
+    Para que o upload para o codeclimate funciona você precisa criar um token no CodeClimate e colocar esse token como um secret no seu repositório. O Nome do secret **deve ser**: ``CC_TEST_REPORTER_ID``. Mais sobre a documentação do codeclimate com githubactions: https://docs.codeclimate.com/docs/github-actions-test-coverage
 
 # Pydantic - Configuração baseada em variáveis de ambiente
 
@@ -59,7 +66,7 @@ Exemplo de uso:
 
 ```python
     from config import settings
-    
+
     print(settings.DEBUG)
 ```
 
@@ -80,4 +87,4 @@ Caso não definimos nenhum namespace, o prefixo será `DEV`, ou seja
     DEV_REDIS_PORT=1234 python main.py
 ```
 
-`lembrando que dentro da sua aplicação o que vale é justamente o nome que foi definido no arquivo config.py, sem o prefixo`
+Lembrando que dentro da sua aplicação o que vale é justamente o nome que foi definido no arquivo config.py, sem o prefixo.
