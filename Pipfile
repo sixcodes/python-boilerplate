@@ -16,6 +16,9 @@ black = "==18.9b0"
 isort = {extras = ["pipfile"],version = "==4.3.15"}
 python-boilerplate = {editable = true,path = "."}
 lxml = "==4.6.1"
+sphinx = "==3.2.1"
+sphinx-issues = "==1.2.0"
+sphinx-intl = "==2.0.1"
 
 [requires]
 python_version = "3"
@@ -27,3 +30,4 @@ fmt = "black --py36 -v --line-length 80 ."
 fmt-check = "black --py36 -v --line-length 80 --check ."
 isort-fmt = "isort --apply --recursive --line-width 80 --use-parentheses --no-inline-sort --multi-line 3 --trailing-comma ."
 isort-check = "isort --check-only --recursive --line-width 80 --use-parentheses --no-inline-sort --multi-line 3 --trailing-comma ."
+make-docs = "make -C docs-src html"
