@@ -18,7 +18,7 @@ python-boilerplate = {editable = true,path = "."}
 lxml = "==4.4.1"
 
 [requires]
-python_version = "3.8"
+python_version = "3"
 
 [scripts]
 test = "py.test -v --cov=myproj --cov-report term-missing -v"
