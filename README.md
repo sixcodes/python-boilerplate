@@ -68,6 +68,8 @@ Essa configuração do release-drafter também já calcula a próxima versão ba
 - A label ``bug`` aumenta a ``patch`` version;
 - PR sem label também aumenta a ``patch`` version;
 
+Não se esqueça de de ajustar o links para o seu projeto no arquivo ``.github/release-drafter.yml``.
+
 # Pydantic - Configuração baseada em variáveis de ambiente
 
 Para facilitar na criação de um novo serviço e seguindo as boas práticas definidas no [12factors](https://12factor.net/config) sobre configurações.
