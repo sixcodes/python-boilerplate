@@ -20,7 +20,7 @@ version-resolver:
       - 'bug'
   default: patch
 template: |
-  ## Changelog for #RESOLVED_VERSION
+  ## Changelog for $RESOLVED_VERSION
 
   $CHANGES
 
