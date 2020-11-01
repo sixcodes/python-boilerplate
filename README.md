@@ -48,6 +48,26 @@ Esse repositorio já possui alguns workflows do Github Actions pré-configurados
 
     Para que o upload para o codeclimate funciona você precisa criar um token no CodeClimate e colocar esse token como um secret no seu repositório. O Nome do secret **deve ser**: ``CC_TEST_REPORTER_ID``. Mais sobre a documentação do codeclimate com githubactions: https://docs.codeclimate.com/docs/github-actions-test-coverage
 
+## Changelog Automático
+
+Esse projeto já vem com o [release-drafter](https://github.com/release-drafter/release-drafter) configurado. Dessa forma, a cada PR megeado na branch [``main``](https://github.blog/changelog/2020-10-01-the-default-branch-for-newly-created-repositories-is-now-main/) (e também na ``master`` para repositório legados) uma Release Draft será atualizada mencionando esse PR.
+
+Para fazer uso dessa opção, basta criar quatro labels em seu projeto:
+
+- ``feature``
+- ``bug``
+- ``docs``
+- ``breaking-change``
+
+Todos os PRs que tievem uma (ou mais) dessas labels e forem mergeados pra branch principal, uma release Draft será automaticamente atualizada.
+
+Essa configuração do release-drafter também já calcula a próxima versão baseado no [SemVer](https://semver.org). A configuração é a seguinte:
+
+- A label ``breaking-change`` aumenta a ``major`` version;
+- A label ``feature`` aumenta a ``minor`` version;
+- A label ``bug`` aumenta a ``patch`` version;
+- PR sem label também aumenta a ``patch`` version;
+
 # Pydantic - Configuração baseada em variáveis de ambiente
 
 Para facilitar na criação de um novo serviço e seguindo as boas práticas definidas no [12factors](https://12factor.net/config) sobre configurações.
