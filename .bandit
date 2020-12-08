@@ -1,3 +1,0 @@
-[bandit]
-targets = myproj/
-skips = B101

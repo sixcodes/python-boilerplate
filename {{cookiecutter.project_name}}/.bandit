@@ -1,0 +1,3 @@
+[bandit]
+targets = {{cookiecutter.project_name}}/
+skips = B101
