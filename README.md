@@ -2,7 +2,7 @@
 
 ## Como usar?
 
-Primeiramente garanta que você tem o cookiecutter instaaldo no seu PATH.
+Primeiramente garanta que você tem o cookiecutter instalado no seu PATH.
 
 ```shell
 sudo pip install cookiecutter
@@ -42,32 +42,6 @@ sixcodes
 |-- Pipfile
 |-- Pipfile.lock
 |-- README.md
-|-- docs
-|   |-- _sources
-|   |   `-- index.rst.txt
-|   |-- _static
-|   |   |-- _stemmer.js
-|   |   |-- alabaster.css
-|   |   |-- basic.css
-|   |   |-- custom.css
-|   |   |-- doctools.js
-|   |   |-- documentation_options.js
-|   |   |-- file.png
-|   |   |-- jquery-3.5.1.js
-|   |   |-- jquery.js
-|   |   |-- language_data.js
-|   |   |-- minus.png
-|   |   |-- plus.png
-|   |   |-- pygments.css
-|   |   |-- searchtools.js
-|   |   |-- translations.js
-|   |   |-- underscore-1.3.1.js
-|   |   `-- underscore.js
-|   |-- genindex.html
-|   |-- index.html
-|   |-- objects.inv
-|   |-- search.html
-|   `-- searchindex.js
 |-- docs-src
 |   |-- Makefile
 |   |-- _static
@@ -85,6 +59,25 @@ sixcodes
 
 7 directories, 38 files
 ```
+
+## O que esse boilerplate entrega
+
+
+### Github Actions Workflows
+
+O projeto criado já tras alguns workflows do Github Actions:
+
+- `pull-request`: Workflow que roda a cada pull-request aberto. Roda os testes a checagens de lint, format, etc.
+- `release`: A cada tag criada com o padrão `X.Y.Z` gera uma publicação no Pypi.
+
+  Para essa publicação você precisa adicionar um secret ao projeto com nome `PYPI_TOKEN`. Mais detalhes na [documentação do Pypi](https://pypi.org/help/#apitoken):
+
+
+### Pré-configuração para documentação com Sphinx
+
+A configuração do [Sphinx](https://www.sphinx-doc.org/en/master/) já está pronta. O código-fonte da documentação fica em `docs-src/` e a documentação gerada fica em `docs/`, já pronta para ser servida pelo [Github Pages](https://pages.github.com/).
+
+Para gerar sua documentação rode: `pipenv run make-docs`
 
 ## Como ajudar?
 
